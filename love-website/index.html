@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Love ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:Tahoma,Arial,sans-serif;
+    color:#fff;
+    background:#050505;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-5;
+    background:
+        radial-gradient(circle at 15% 20%,rgba(212,175,55,.16),transparent 25%),
+        radial-gradient(circle at 85% 75%,rgba(255,0,80,.13),transparent 28%),
+        linear-gradient(135deg,#020202,#111,#030303);
+}
+
+.glow{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.35;
+}
+
+.glow.one{
+    background:#d4af37;
+    top:-100px;
+    left:-100px;
+}
+
+.glow.two{
+    background:#ff1744;
+    bottom:-100px;
+    right:-100px;
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+}
+
+.particle{
+    position:absolute;
+    color:#d4af37;
+    opacity:.5;
+    animation:particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+    from{
+        transform:translateY(105vh) rotate(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.6;
+    }
+
+    to{
+        transform:translateY(-10vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.login-card{
+    width:100%;
+    max-width:410px;
+    padding:35px 25px;
+    text-align:center;
+
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(212,175,55,.3);
+    border-radius:30px;
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.6),
+        0 0 50px rgba(212,175,55,.06);
+}
+
+.lock{
+    width:85px;
+    height:85px;
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:40px;
+
+    background:
+        radial-gradient(circle,#d4af37,#7b5d09);
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,.3);
+}
+
+.login-card h1{
+    font-size:28px;
+    margin-bottom:10px;
+
+    background:linear-gradient(
+        90deg,#fff,#d4af37,#fff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.login-card p{
+    color:#999;
+    font-size:13px;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.password{
+    width:100%;
+    padding:16px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    background:rgba(0,0,0,.4);
+
+    color:#fff;
+
+    text-align:center;
+    font-size:16px;
+
+    outline:none;
+}
+
+.password:focus{
+    border-color:#d4af37;
+    box-shadow:0 0 20px rgba(212,175,55,.1);
+}
+
+.login-btn{
+    width:100%;
+    margin-top:15px;
+
+    padding:15px;
+
+    border:0;
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+    font-family:inherit;
+
+    background:
+        linear-gradient(
+            135deg,#fff0a0,#d4af37
+        );
+
+    color:#111;
+
+    box-shadow:
+        0 10px 30px rgba(212,175,55,.15);
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.error{
+    color:#ff5575;
+    font-size:12px;
+    margin-top:12px;
+    min-height:18px;
+}
+
+/* =========================
+   MAIN WEBSITE
+========================= */
+
+#mainPage{
+    display:none;
+}
+
+.container{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px 60px;
+}
+
+/* Header */
+
+.header{
+    text-align:center;
+    padding:20px 0 30px;
+}
+
+.brand{
+    color:#d4af37;
+    letter-spacing:6px;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.header h1{
+    font-size:clamp(35px,8vw,70px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #d4af37,
+            #ff6680,
+            #fff
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.header p{
+    color:#999;
+    margin-top:12px;
+    font-size:13px;
+}
+
+/* Card */
+
+.card{
+    padding:25px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(212,175,55,.22);
+
+    border-radius:32px;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.5);
+}
+
+/* =========================
+   COUPLE
+========================= */
+
+.couple{
+    display:grid;
+    grid-template-columns:1fr 100px 1fr;
+    align-items:center;
+    gap:20px;
+}
+
+.person{
+    text-align:center;
+}
+
+.avatar{
+    width:100%;
+    max-width:330px;
+    aspect-ratio:1/1;
+
+    margin:auto;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:2px solid rgba(212,175,55,.55);
+
+    background:
+        linear-gradient(145deg,#181818,#050505);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.55);
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+}
+
+.avatar.active img{
+    display:block;
+}
+
+.avatar-placeholder{
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#777;
+}
+
+.avatar-placeholder div{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.avatar.active .avatar-placeholder{
+    display:none;
+}
+
+.upload{
+    display:inline-block;
+
+    margin-top:14px;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:12px;
+    font-weight:bold;
+
+    color:#111;
+
+    background:
+        linear-gradient(
+            135deg,#fff1a6,#d4af37
+        );
+}
+
+.upload input{
+    display:none;
+}
+
+.person-name{
+    margin-top:12px;
+    color:#d4af37;
+    font-weight:bold;
+}
+
+.love-heart{
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:38px;
+
+    background:
+        radial-gradient(circle,#ff3155,#85001c);
+
+    box-shadow:
+        0 0 40px rgba(255,20,70,.35);
+
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.18);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.names{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:30px;
+}
+
+.input{
+    width:100%;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(212,175,55,.22);
+
+    background:rgba(0,0,0,.35);
+
+    color:#fff;
+
+    outline:none;
+
+    text-align:center;
+
+    font-family:inherit;
+}
+
+.input:focus{
+    border-color:#d4af37;
+}
+
+.message{
+    margin-top:15px;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+    line-height:2;
+}
+
+/* =========================
+   LOVE TEXT
+========================= */
+
+.love-text{
+    text-align:center;
+    margin:35px 0;
+}
+
+.love-text h2{
+    font-size:clamp(25px,6vw,45px);
+
+    background:
+        linear-gradient(
+            90deg,#fff,#d4af37,#ff6680,#fff
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.love-text p{
+    margin-top:12px;
+    color:#aaa;
+    line-height:2;
+    white-space:pre-line;
+}
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin:30px 0;
+}
+
+.counter-box{
+    padding:18px 8px;
+    text-align:center;
+
+    border-radius:20px;
+
+    background:rgba(0,0,0,.3);
+
+    border:1px solid rgba(212,175,55,.15);
+}
+
+.counter-box strong{
+    display:block;
+    font-size:28px;
+    color:#d4af37;
+}
+
+.counter-box span{
+    font-size:11px;
+    color:#777;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music{
+    padding:25px;
+
+    border-radius:25px;
+
+    background:rgba(0,0,0,.32);
+
+    border:1px solid rgba(212,175,55,.18);
+
+    text-align:center;
+}
+
+.music-title{
+    color:#d4af37;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.music-name{
+    color:#ddd;
+    font-size:13px;
+    margin:12px 0;
+}
+
+audio{
+    width:100%;
+    margin-top:10px;
+}
+
+.music-controls{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+
+.control{
+    border:0;
+    border-radius:50px;
+    padding:12px 22px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:bold;
+}
+
+.play{
+    background:linear-gradient(135deg,#fff0a0,#d4af37);
+    color:#111;
+}
+
+.stop{
+    background:#222;
+    color:#fff;
+    border:1px solid #444;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+
+    color:#d4af37;
+
+    font-size:18px;
+}
+
+.gallery-upload{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.gallery-item{
+    position:relative;
+    aspect-ratio:1/1;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    background:#111;
+
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.empty-gallery{
+    grid-column:1/-1;
+    text-align:center;
+    color:#666;
+    padding:30px;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+#lightbox{
+    display:none;
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    z-index:100;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+#lightbox img{
+    max-width:95%;
+    max-height:85vh;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 0 60px rgba(212,175,55,.2);
+}
+
+.close-lightbox{
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid #555;
+
+    background:#111;
+
+    color:#fff;
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#555;
+    font-size:11px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .container{
+        padding:15px 10px 45px;
+    }
+
+    .card{
+        padding:15px;
+        border-radius:25px;
+    }
+
+    .couple{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .love-heart{
+        width:65px;
+        height:65px;
+        font-size:30px;
+    }
+
+    .names{
+        grid-template-columns:1fr;
+    }
+
+    .counter{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .avatar{
+        max-width:280px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+</div>
+
+<div id="particles"></div>
+
+
+<!-- =========================
+     LOGIN PAGE
+========================= -->
+
+<section id="loginPage">
+
+    <div class="login-card">
+
+        <div class="lock">
+            🔐
+        </div>
+
+        <h1>
+            صفحه خصوصی ما
+        </h1>
+
+        <p>
+            اینجا فقط برای دو نفر ساخته شده ❤️<br>
+            رمز عشق را وارد کن تا وارد شوی
+        </p>
+
+        <input
+            id="passwordInput"
+            class="password"
+            type="password"
+            placeholder="رمز ورود"
+            autocomplete="off"
+        >
+
+        <button
+            class="login-btn"
+            onclick="login()"
+        >
+            ورود به دنیای عشق ❤️
+        </button>
+
+        <div
+            class="error"
+            id="loginError"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN PAGE
+========================= -->
+
+<section id="mainPage">
+
+<div class="container">
+
+<header class="header">
+
+    <div class="brand">
+        OUR PRIVATE LOVE
+    </div>
+
+    <h1>
+        داستان عشق ما ❤️
+    </h1>
+
+    <p>
+        یک دنیای کوچک برای بزرگ‌ترین عشق زندگی
+    </p>
+
+</header>
+
+
+<div class="card">
+
+<!-- COUPLE -->
+
+<div class="couple">
+
+    <!-- PERSON 1 -->
+
+    <div class="person">
+
+        <div
+            class="avatar"
+            id="avatar1"
+        >
+
+            <img id="img1">
+
+            <div class="avatar-placeholder">
+                <div>👤</div>
+                <span>عکس من</span>
+            </div>
+
+        </div>
+
+        <label class="upload">
+
+            انتخاب عکس من
+
+            <input
+                type="file"
+                accept="image/*"
+                onchange="loadProfile(event,1)"
+            >
+
+        </label>
+
+        <div
+            class="person-name"
+            id="displayName1"
+        >
+            من ❤️
+        </div>
+
+    </div>
+
+
+    <!-- HEART -->
+
+    <div class="love-heart">
+        ❤️
+    </div>
+
+
+    <!-- PERSON 2 -->
+
+    <div class="person">
+
+        <div
+            class="avatar"
+            id="avatar2"
+        >
+
+            <img id="img2">
+
+            <div class="avatar-placeholder">
+                <div>💕</div>
+                <span>عکس عشق من</span>
+            </div>
+
+        </div>
+
+        <label class="upload">
+
+            انتخاب عکس عشق
+
+            <input
+                type="file"
+                accept="image/*"
+                onchange="loadProfile(event,2)"
+            >
+
+        </label>
+
+        <div
+            class="person-name"
+            id="displayName2"
+        >
+            عشق من ❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- NAMES -->
+
+<div class="names">
+
+    <input
+        class="input"
+        id="name1"
+        placeholder="اسم من"
+        oninput="updateLove()"
+    >
+
+    <input
+        class="input"
+        id="name2"
+        placeholder="اسم عشق من"
+        oninput="updateLove()"
+    >
+
+</div>
+
+
+<!-- MESSAGE -->
+
+<div class="message">
+
+<textarea
+    class="input"
+    id="message"
+    placeholder="اینجا نامه یا متن عاشقانه خودت را بنویس ❤️"
+    oninput="updateLove()"
+></textarea>
+
+</div>
+
+
+<!-- LOVE TEXT -->
+
+<div class="love-text">
+
+    <h2 id="loveTitle">
+        تو و من، برای همیشه ❤️
+    </h2>
+
+    <p id="loveMessage">
+        کنار تو بودن، قشنگ‌ترین اتفاق زندگی منه...
+    </p>
+
+</div>
+
+
+<!-- COUNTER -->
+
+<div class="section-title">
+    ⏳ مدت عشق ما
+</div>
+
+<div class="counter">
+
+    <div class="counter-box">
+        <strong id="days">0</strong>
+        <span>روز</span>
+    </div>
+
+    <div class="counter-box">
+        <strong id="hours">0</strong>
+        <span>ساعت</span>
+    </div>
+
+    <div class="counter-box">
+        <strong id="minutes">0</strong>
+        <span>دقیقه</span>
+    </div>
+
+    <div class="counter-box">
+        <strong id="seconds">0</strong>
+        <span>ثانیه</span>
+    </div>
+
+</div>
+
+<div style="text-align:center;margin-bottom:25px">
+
+    <input
+        type="date"
+        id="startDate"
+        class="input"
+        style="max-width:300px"
+        onchange="saveStartDate()"
+    >
+
+</div>
+
+
+<!-- MUSIC -->
+
+<div class="music">
+
+    <div class="music-title">
+        🎵 آهنگ مخصوص ما
+    </div>
+
+    <label class="upload">
+
+        انتخاب آهنگ
+
+        <input
+            type="file"
+            accept="audio/*"
+            onchange="loadMusic(event)"
+        >
+
+    </label>
+
+    <div
+        class="music-name"
+        id="musicName"
+    >
+        هنوز آهنگی انتخاب نشده
+    </div>
+
+    <audio
+        id="audio"
+        controls
+    ></audio>
+
+    <div class="music-controls">
+
+        <button
+            class="control play"
+            onclick="toggleMusic()"
+            id="playBtn"
+        >
+            ▶ پخش
+        </button>
+
+        <button
+            class="control stop"
+            onclick="stopMusic()"
+        >
+            ⏹ توقف
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- GALLERY -->
+
+<div class="section-title">
+    📸 خاطرات ما
+</div>
+
+<div class="gallery-upload">
+
+    <label class="upload">
+
+        + افزودن عکس به گالری
+
+        <input
+            type="file"
+            accept="image/*"
+            multiple
+            onchange="addGallery(event)"
+        >
+
+    </label>
+
+</div>
+
+<div
+    class="gallery"
+    id="gallery"
+>
+
+    <div class="empty-gallery">
+        هنوز عکسی به گالری اضافه نشده ❤️
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+    ساخته شده با عشق ❤️ برای یک عشق خاص
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox">
+
+    <button
+        class="close-lightbox"
+        onclick="closeLightbox()"
+    >
+        ×
+    </button>
+
+    <img id="lightboxImage">
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   🔐 PASSWORD
+   فقط مقدار داخل کوتیشن را تغییر بده
+===================================================== */
+
+const PASSWORD = "1234";
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function login(){
+
+    const input =
+        document.getElementById("passwordInput").value;
+
+    const error =
+        document.getElementById("loginError");
+
+    if(input === PASSWORD){
+
+        document.getElementById("loginPage").style.display="none";
+
+        document.getElementById("mainPage").style.display="block";
+
+        error.textContent="";
+
+    }else{
+
+        error.textContent =
+            "رمز اشتباه است ❤️ دوباره امتحان کن";
+
+        document.getElementById("passwordInput").value="";
+    }
+}
+
+
+document
+.getElementById("passwordInput")
+.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+        login();
+    }
+
+});
+
+
+/* =====================================================
+   PROFILE IMAGES
+===================================================== */
+
+function loadProfile(event,number){
+
+    const file =
+        event.target.files[0];
+
+    if(!file)return;
+
+    const url =
+        URL.createObjectURL(file);
+
+    const img =
+        document.getElementById("img"+number);
+
+    const avatar =
+        document.getElementById("avatar"+number);
+
+    img.src=url;
+
+    avatar.classList.add("active");
+}
+
+
+/* =====================================================
+   NAMES + MESSAGE
+===================================================== */
+
+function updateLove(){
+
+    const name1 =
+        document.getElementById("name1").value.trim();
+
+    const name2 =
+        document.getElementById("name2").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    document.getElementById("displayName1")
+        .textContent =
+        name1 ? name1+" ❤️" : "من ❤️";
+
+
+    document.getElementById("displayName2")
+        .textContent =
+        name2 ? name2+" ❤️" : "عشق من ❤️";
+
+
+    if(name1 && name2){
+
+        document.getElementById("loveTitle")
+            .textContent =
+            name1+" ❤️ "+name2;
+
+    }else{
+
+        document.getElementById("loveTitle")
+            .textContent =
+            "تو و من، برای همیشه ❤️";
+    }
+
+
+    document.getElementById("loveMessage")
+        .textContent =
+        message ||
+        "کنار تو بودن، قشنگ‌ترین اتفاق زندگی منه...";
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const audio =
+    document.getElementById("audio");
+
+
+function loadMusic(event){
+
+    const file =
+        event.target.files[0];
+
+    if(!file)return;
+
+    const url =
+        URL.createObjectURL(file);
+
+    audio.src=url;
+
+    document.getElementById("musicName")
+        .textContent =
+        "🎵 "+file.name;
+
+    audio.load();
+}
+
+
+function toggleMusic(){
+
+    if(!audio.src){
+
+        alert("اول یک آهنگ انتخاب کن ❤️");
+
+        return;
+    }
+
+    if(audio.paused){
+
+        audio.play();
+
+        document.getElementById("playBtn")
+            .textContent="⏸ توقف";
+
+    }else{
+
+        audio.pause();
+
+        document.getElementById("playBtn")
+            .textContent="▶ پخش";
+    }
+}
+
+
+function stopMusic(){
+
+    audio.pause();
+
+    audio.currentTime=0;
+
+    document.getElementById("playBtn")
+        .textContent="▶ پخش";
+}
+
+
+audio.addEventListener("play",function(){
+
+    document.getElementById("playBtn")
+        .textContent="⏸ توقف";
+
+});
+
+
+audio.addEventListener("pause",function(){
+
+    document.getElementById("playBtn")
+        .textContent="▶ پخش";
+
+});
+
+
+/* =====================================================
+   RELATIONSHIP COUNTER
+===================================================== */
+
+function saveStartDate(){
+
+    const date =
+        document.getElementById("startDate").value;
+
+    localStorage.setItem(
+        "loveStartDate",
+        date
+    );
+}
+
+
+function updateCounter(){
+
+    const saved =
+        localStorage.getItem("loveStartDate");
+
+    if(!saved)return;
+
+    const start =
+        new Date(saved+"T00:00:00");
+
+    const now =
+        new Date();
+
+    let difference =
+        now-start;
+
+    if(difference<0){
+
+        difference=0;
+    }
+
+    const second =
+        1000;
+
+    const minute =
+        second*60;
+
+    const hour =
+        minute*60;
+
+    const day =
+        hour*24;
+
+
+    const days =
+        Math.floor(difference/day);
+
+    const hours =
+        Math.floor(
+            (difference%day)/hour
+        );
+
+    const minutes =
+        Math.floor(
+            (difference%hour)/minute
+        );
+
+    const seconds =
+        Math.floor(
+            (difference%minute)/second
+        );
+
+
+    document.getElementById("days")
+        .textContent=days;
+
+    document.getElementById("hours")
+        .textContent=hours;
+
+    document.getElementById("minutes")
+        .textContent=minutes;
+
+    document.getElementById("seconds")
+        .textContent=seconds;
+}
+
+
+const savedDate =
+    localStorage.getItem("loveStartDate");
+
+if(savedDate){
+
+    document.getElementById("startDate")
+        .value=savedDate;
+}
+
+setInterval(updateCounter,1000);
+
+updateCounter();
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+function addGallery(event){
+
+    const files =
+        Array.from(event.target.files);
+
+    const gallery =
+        document.getElementById("gallery");
+
+
+    const empty =
+        gallery.querySelector(".empty-gallery");
+
+    if(empty){
+        empty.remove();
+    }
+
+
+    files.forEach(file=>{
+
+        const url =
+            URL.createObjectURL(file);
+
+        const item =
+            document.createElement("div");
+
+        item.className="gallery-item";
+
+        const img =
+            document.createElement("img");
+
+        img.src=url;
+
+        item.appendChild(img);
+
+        item.onclick=function(){
+
+            openLightbox(url);
+
+        };
+
+        gallery.appendChild(item);
+
+    });
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+function openLightbox(url){
+
+    document.getElementById("lightboxImage")
+        .src=url;
+
+    document.getElementById("lightbox")
+        .style.display="flex";
+}
+
+
+function closeLightbox(){
+
+    document.getElementById("lightbox")
+        .style.display="none";
+}
+
+
+document
+.getElementById("lightbox")
+.addEventListener("click",function(e){
+
+    if(e.target===this){
+        closeLightbox();
+    }
+
+});
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+const particleContainer =
+    document.getElementById("particles");
+
+const symbols=[
+    "❤️",
+    "♡",
+    "✨",
+    "💕",
+    "✦",
+    "💖"
+];
+
+
+for(let i=0;i<35;i++){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className="particle";
+
+    particle.textContent =
+        symbols[
+            Math.floor(
+                Math.random()*symbols.length
+            )
+        ];
+
+    particle.style.left =
+        Math.random()*100+"%";
+
+    particle.style.fontSize =
+        (8+Math.random()*18)+"px";
+
+    particle.style.animationDuration =
+        (8+Math.random()*12)+"s";
+
+    particle.style.animationDelay =
+        Math.random()*10+"s";
+
+    particleContainer.appendChild(particle);
+}
+
+</script>
+
+</body>
+</html>
+
+
