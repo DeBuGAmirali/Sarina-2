@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Love ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #050505;
+    --red: #5d0715;
+    --red2: #a30b25;
+    --gold: #d6ad55;
+    --gold-light: #f6df9b;
+    --white: #fff8ed;
+    --muted: #bcae9c;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(126,10,28,.35), transparent 35%),
+        radial-gradient(circle at 10% 90%, rgba(111,8,23,.18), transparent 30%),
+        linear-gradient(135deg, #020202, #100607 50%, #030303);
+    color: var(--white);
+    font-family: "Vazirmatn", sans-serif;
+    overflow-x: hidden;
+}
+
+/* PARTICLES */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    bottom: -30px;
+    color: rgba(214,173,85,.55);
+    animation: floatUp linear infinite;
+    text-shadow: 0 0 15px rgba(214,173,85,.5);
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* LOGIN */
+
+.login {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:
+        radial-gradient(circle at center, rgba(90,5,18,.3), transparent 45%),
+        #030303;
+}
+
+.login-box {
+    width: min(430px, 100%);
+    padding: 45px 32px;
+    text-align: center;
+    border: 1px solid rgba(214,173,85,.35);
+    border-radius: 30px;
+    background: rgba(10,7,7,.88);
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 0 80px rgba(104,5,20,.25),
+        inset 0 0 40px rgba(214,173,85,.025);
+}
+
+.logo-heart {
+    font-size: 65px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.6s infinite;
+    filter: drop-shadow(0 0 20px #a30b25);
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.16);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+}
+
+.login h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+}
+
+.login p {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.password {
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 15px;
+    border: 1px solid rgba(214,173,85,.3);
+    outline: none;
+    background: #090707;
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+
+.password:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(214,173,85,.12);
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    color: #120b04;
+    background: linear-gradient(
+        135deg,
+        #b98a32,
+        #f4d77e,
+        #b98a32
+    );
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(214,173,85,.18);
+}
+
+.error {
+    color: #ff6075;
+    margin-top: 15px;
+    display: none;
+}
+
+/* APP */
+
+.app {
+    position: relative;
+    z-index: 2;
+    display: none;
+    width: min(1100px, 94%);
+    margin: auto;
+    padding: 35px 0 70px;
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    padding: 35px 15px 20px;
+}
+
+.header .mini {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 9vw, 100px);
+    line-height: .9;
+    color: var(--gold-light);
+    font-weight: 700;
+    text-shadow: 0 0 35px rgba(214,173,85,.15);
+}
+
+.header h2 {
+    margin-top: 18px;
+    font-size: 18px;
+    color: #e4d9c9;
+    font-weight: 700;
+}
+
+.gold-line {
+    width: 180px;
+    height: 1px;
+    margin: 22px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+}
+
+/* COUPLE */
+
+.couple {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.person {
+    text-align: center;
+}
+
+.photo {
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(
+        135deg,
+        #7d5919,
+        #f1d77e,
+        #71330b
+    );
+    box-shadow:
+        0 0 35px rgba(214,173,85,.12),
+        0 0 80px rgba(112,6,23,.2);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    background: #111;
+}
+
+.person h3 {
+    margin-top: 17px;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--gold-light);
+}
+
+.person span {
+    display: block;
+    color: var(--muted);
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.heart-center {
+    text-align: center;
+    font-size: 55px;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 18px #8d0b20);
+}
+
+/* CARD */
+
+.card {
+    margin-top: 45px;
+    padding: 32px;
+    border-radius: 28px;
+    border: 1px solid rgba(214,173,85,.2);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,12,13,.8),
+            rgba(7,7,7,.88)
+        );
+    box-shadow:
+        0 20px 80px rgba(0,0,0,.35),
+        inset 0 0 40px rgba(214,173,85,.025);
+}
+
+.card-title {
+    text-align: center;
+    color: var(--gold-light);
+    font-size: 23px;
+    font-weight: 900;
+    margin-bottom: 22px;
+}
+
+/* MESSAGE */
+
+.message {
+    text-align: center;
+    color: #e9ddd0;
+    line-height: 2.2;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.message strong {
+    color: var(--gold-light);
+    font-weight: 900;
+}
+
+/* COUNTER */
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.time-box {
+    text-align: center;
+    padding: 20px 8px;
+    border-radius: 18px;
+    background: rgba(0,0,0,.4);
+    border: 1px solid rgba(214,173,85,.14);
+}
+
+.time-box b {
+    display: block;
+    color: var(--gold-light);
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.time-box small {
+    color: var(--muted);
+}
+
+/* MUSIC */
+
+.music-player {
+    text-align: center;
+}
+
+.music-player audio {
+    width: 100%;
+    margin-top: 10px;
+    filter: sepia(1) saturate(.4);
+}
+
+.music-name {
+    margin-top: 15px;
+    color: var(--gold-light);
+    font-weight: 800;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 17px;
+    cursor: pointer;
+    border: 1px solid rgba(214,173,85,.2);
+    transition: .35s;
+}
+
+.gallery img:hover {
+    transform: scale(1.025);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    border-color: rgba(214,173,85,.55);
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    margin-top: 55px;
+    color: #8f8172;
+    font-size: 12px;
+}
+
+.footer span {
+    color: var(--gold);
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0,0,0,.92);
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 15px;
+    border: 2px solid rgba(214,173,85,.4);
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .app {
+        width: 92%;
+        padding-top: 15px;
+    }
+
+    .couple {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .heart-center {
+        order: 2;
+        font-size: 45px;
+    }
+
+    .person {
+        order: 1;
+    }
+
+    .person:nth-child(3) {
+        order: 3;
+    }
+
+    .photo {
+        width: 175px;
+        height: 175px;
+    }
+
+    .counter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 170px;
+    }
+
+    .card {
+        padding: 22px 17px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!-- LOGIN -->
+
+<section class="login" id="login">
+
+    <div class="login-box">
+
+        <div class="logo-heart">❤️</div>
+
+        <h1>Our Private Love</h1>
+
+        <p>
+            این صفحه فقط برای تو و عشق منه...
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            class="password"
+            placeholder="رمز ورود را وارد کن"
+        >
+
+        <button class="btn" onclick="login()">
+            ورود به دنیای عشق ❤️
+        </button>
+
+        <div class="error" id="error">
+            رمز عبور اشتباه است!
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="app" id="app">
+
+    <header class="header">
+
+        <div class="mini">
+            OUR STORY • OUR LOVE • FOREVER
+        </div>
+
+        <h1>Our Love</h1>
+
+        <div class="gold-line"></div>
+
+        <h2>
+            داستانی که قرار نیست هیچ‌وقت تمام شود ❤️
+        </h2>
+
+    </header>
+
+
+    <!-- COUPLE -->
+
+    <section class="couple">
+
+        <div class="person">
+
+            <div class="photo">
+
+                <img
+                    src="assets/images/me.jpg"
+                    alt="My Photo"
+                    onerror="this.src='https://via.placeholder.com/500x500/100707/d6ad55?text=ME'"
+                >
+
+            </div>
+
+            <h3>My Love</h3>
+
+            <span>
+                همیشه کنار تو ❤️
+            </span>
+
+        </div>
+
+
+        <div class="heart-center">
+            ❤️
+        </div>
+
+
+        <div class="person">
+
+            <div class="photo">
+
+                <img
+                    src="assets/images/love.jpg"
+                    alt="Love Photo"
+                    onerror="this.src='https://via.placeholder.com/500x500/100707/d6ad55?text=LOVE'"
+                >
+
+            </div>
+
+            <h3>My Everything</h3>
+
+            <span>
+                تمام دنیای من ❤️
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE -->
+
+    <section class="card">
+
+        <div class="card-title">
+            برای عشق من
+        </div>
+
+        <div class="message">
+
+            <p>
+                بعضی آدم‌ها وارد زندگی ما نمی‌شوند که فقط
+                <strong>کنارمان باشند...</strong>
+            </p>
+
+            <p>
+                می‌آیند تا معنی واقعی
+                <strong>عشق، آرامش و زندگی</strong>
+                را به ما نشان دهند.
+            </p>
+
+            <p>
+                و تو برای من همان آدمی هستی
+                که نمی‌خواهم هیچ‌وقت از دستش بدهم.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>
+                    دوستت دارم؛ بیشتر از چیزی که بتوانم با کلمات بگویم ❤️
+                </strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- COUNTER -->
+
+    <section class="card">
+
+        <div class="card-title">
+            از روزی که تو وارد زندگی من شدی...
+        </div>
+
+        <div class="counter">
+
+            <div class="time-box">
+                <b id="days">0</b>
+                <small>روز</small>
+            </div>
+
+            <div class="time-box">
+                <b id="hours">0</b>
+                <small>ساعت</small>
+            </div>
+
+            <div class="time-box">
+                <b id="minutes">0</b>
+                <small>دقیقه</small>
+            </div>
+
+            <div class="time-box">
+                <b id="seconds">0</b>
+                <small>ثانیه</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+    <section class="card music-player">
+
+        <div class="card-title">
+            آهنگ ما 🎵
+        </div>
+
+        <audio
+            id="loveMusic"
+            controls
+            loop
+            preload="auto"
+        >
+            <source
+                src="assets/music/our-song.mp3"
+                type="audio/mpeg"
+            >
+
+            مرورگر شما از پخش موسیقی پشتیبانی نمی‌کند.
+
+        </audio>
+
+        <div class="music-name">
+            Our Song ❤️
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section class="card">
+
+        <div class="card-title">
+              📸
+        </div>
+
+        <div class="gallery">
+
+            <img
+                src="assets/images/photo1.jpg"
+                alt="Memory 1"
+                onclick="openImage(this.src)"
+            >
+
+            <img
+                src="assets/images/photo2.jpg"
+                alt="Memory 2"
+                onclick="openImage(this.src)"
+            >
+
+            <img
+                src="assets/images/photo3.jpg"
+                alt="Memory 3"
+                onclick="openImage(this.src)"
+            >
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+
+        ساخته شده با
+        <span>❤️</span>
+        برای خاص‌ترین آدم زندگی من
+
+    </footer>
+
+</main>
+
+
+<!-- LIGHTBOX -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeImage()"
+>
+
+    <div class="close">
+        ×
+    </div>
+
+    <img
+        id="lightboxImg"
+        src=""
+        alt=""
+    >
+
+</div>
+
+
+<script>
+
+/* =========================================
+   PASSWORD
+   رمز ورود را اینجا تغییر بده
+   ========================================= */
+
+const PASSWORD = "sarina";
+
+
+/* =========================================
+   LOGIN + AUTOPLAY MUSIC
+   ========================================= */
+
+function login() {
+
+    const input =
+        document.getElementById("password");
+
+    const error =
+        document.getElementById("error");
+
+    if (input.value === PASSWORD) {
+
+        /* بستن صفحه رمز */
+        document.getElementById("login").style.display = "none";
+
+        /* نمایش سایت */
+        document.getElementById("app").style.display = "block";
+
+        /* شروع افکت‌ها */
+        startParticles();
+
+        /*
+         * پخش آهنگ بلافاصله بعد از کلیک ورود
+         */
+        const music =
+            document.getElementById("loveMusic");
+
+        music.volume = 0.7;
+
+        music.play()
+            .then(() => {
+
+                console.log("Music started");
+
+            })
+            .catch(() => {
+
+                /*
+                 * اگر مرورگر اجازه پخش نداد،
+                 * کنترل آهنگ همچنان روی صفحه وجود دارد.
+                 */
+                console.log(
+                    "Browser blocked autoplay."
+                );
+
+            });
+
+    } else {
+
+        error.style.display = "block";
+
+        input.value = "";
+
+        setTimeout(() => {
+
+            error.style.display = "none";
+
+        }, 2500);
+
+    }
+
+}
+
+
+/* ENTER */
+
+document
+    .getElementById("password")
+    .addEventListener("keydown", function(e) {
+
+        if (e.key === "Enter") {
+
+            login();
+
+        }
+
+    });
+
+
+/* =========================================
+   PARTICLES
+   ========================================= */
+
+function startParticles() {
+
+    const container =
+        document.getElementById("particles");
+
+    const symbols = [
+        "♥",
+        "♡",
+        "✦",
+        "•"
+    ];
+
+    setInterval(() => {
+
+        const particle =
+            document.createElement("div");
+
+        particle.className =
+            "particle";
+
+        particle.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.fontSize =
+            (10 + Math.random() * 20) + "px";
+
+        particle.style.animationDuration =
+            (6 + Math.random() * 8) + "s";
+
+        container.appendChild(particle);
+
+        setTimeout(() => {
+
+            particle.remove();
+
+        }, 15000);
+
+    }, 500);
+
+}
+
+
+/* =========================================
+   LOVE COUNTER
+   تاریخ شروع رابطه را تغییر بده
+   ========================================= */
+
+const loveStart =
+    new Date("2025-08-20T00:00:00");
+
+
+function updateCounter() {
+
+    const now = new Date();
+
+    let difference =
+        now - loveStart;
+
+    if (difference < 0) {
+
+        difference = 0;
+
+    }
+
+    const seconds =
+        Math.floor(
+            difference / 1000
+        );
+
+    const days =
+        Math.floor(
+            seconds / 86400
+        );
+
+    const hours =
+        Math.floor(
+            (seconds % 86400) / 3600
+        );
+
+    const minutes =
+        Math.floor(
+            (seconds % 3600) / 60
+        );
+
+    const sec =
+        seconds % 60;
+
+
+    document.getElementById("days")
+        .textContent =
+        days.toLocaleString("fa-IR");
+
+
+    document.getElementById("hours")
+        .textContent =
+        hours.toLocaleString("fa-IR");
+
+
+    document.getElementById("minutes")
+        .textContent =
+        minutes.toLocaleString("fa-IR");
+
+
+    document.getElementById("seconds")
+        .textContent =
+        sec.toLocaleString("fa-IR");
+
+}
+
+
+setInterval(
+    updateCounter,
+    1000
+);
+
+updateCounter();
+
+
+/* =========================================
+   LIGHTBOX
+   ========================================= */
+
+function openImage(src) {
+
+    document.getElementById(
+        "lightboxImg"
+    ).src = src;
+
+    document.getElementById(
+        "lightbox"
+    ).style.display = "flex";
+
+}
+
+
+function closeImage() {
+
+    document.getElementById(
+        "lightbox"
+    ).style.display = "none";
+
+}
+
+
+/* جلوگیری از بسته شدن با کلیک روی عکس */
+
+document
+    .getElementById("lightboxImg")
+    .addEventListener(
+        "click",
+        function(e) {
+
+            e.stopPropagation();
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
+
+
